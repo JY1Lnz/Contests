@@ -3,25 +3,21 @@ using namespace std;
 
 int main()
 {
-    int sum = 0;
-    int n;
-    cin>>n;
-    int data[n];
-    for (int i = 0;i<n;i++)
+    int t;
+    string s;
+    cin>>t;
+    while(t--)
     {
-        cin>>data[i];
-        sum += data[i];
+        cin>>s;
+        if (s == "1")
+        {
+            cout<<0<<endl;
+            continue;
+        }
+        int x = s[s.length()-1]-'0';
+        if (x%2 != 0)
+            s[s.length()-1] = char(x-1+'0');
+        cout<<s<<endl;
     }
-    int cnt = 0;
-    for (int i = 0;i<n;i++)
-    {
-        if (sum-(2*data[i]) == 0)
-            cnt++;
-    }
-    if (cnt)
-        cout<<cnt<<endl;
-    else
-        cout<<-1<<endl;
-
     return 0;
 }

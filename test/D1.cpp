@@ -1,20 +1,17 @@
-#include<bits/stdc++.h>
+
+#include<iostream>
+#include<cmath>
 using namespace std;
-
-int main()
-{
-    int x1,y1,x2,y2,x3,y3;
-    while(cin>>x1>>y1>>x2>>y2>>x3>>y3)
-    {
-        int x,y;
-        cin>>x>>y;
-        double l12 = sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1));
-        double l23 = sqrt((y3-y2)*(y3-y2)+(x3-x2)*(x3-x2));
-        double l31 = sqrt((y1-y3)*(y1-y3)+(x1-x3)*(x1-x3));
-        double Sabc = sqrt((l12+l23+l31)/2*)
-
-    }
-
-
-    return 0;
+int main(){
+cout << endl;
+cout << "                          Good luck ~" << endl;
+for(double y = 1.5; y > -1.5; y -= 0.1){
+for(double x = -1.5; x < 1.5; x += 0.05){
+double a = x * x + y * y - 1;
+if((a * a * a - x * x * y * y * y) <= 0) cout << '*';
+else cout << " ";
+}
+cout << endl;
+}
+return 0;
 }

@@ -1,25 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std;
+typedef long long LL;
+const int MAXN = 1e6+10;
+int n;
+int a[MAXN];
+int times[MAXN][2];
+struct Line
+{
+    int l;
+    int r
+    bool operator < (const Line & that)const
+    {
+        if (this->l != that.l)
+            return this->l < that.l;
+        return this->r < that.r;
+    }
+}line[100010];
 
 int main()
 {
-    int n;
-    cin>>n;
-    int L[n+1];
-    int R[n+1];
-    int lq,rq;
-    cin>>lq>>rq;
-    for (int i = 1;i<=n;i++)
-        cin>>L[i];
-    for (int i = 1;i<=n;i++)
-        cin>>R[i];
-    int sum = 0;
-    for (int i = lq;i<=rq;i++)
+    int lm = 1e6+10,rm = 0;
+    scanf("%d",&n);
+    for (int i = 0;i<n;i++)
     {
-        if (L[i] <= lq&&R[i] >= rq)
-            sum++;
+        int l,r;
+        scanf("%d%d",&l,&r);
+        line[i].l = l;
+        line[i].r = r;
     }
-    cout<<sum<<endl;
+    sort(line,line+n);
+
+
 
 
     return 0;
